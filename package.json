@@ -1,0 +1,47 @@
+{
+  "name": "time-to-be-hapi",
+  "author": "Glenn Jones",
+  "version": "0.1.0",
+  "description": "Time to be HAPI - london.js talk",
+  "keywords": [
+    "london.js",
+    "slides",
+    "example",
+    "hapi",
+    "api"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/glennjones/time-to-be-hapi.git"
+  },
+  "main": "index",
+  "scripts": {
+    "start": "app"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "blipp": "2.1.x",
+    "boom": "2.8.x",
+    "catbox": "^7.1.0",
+    "glue": "^3.1.0",
+    "good": "^6.6.0",
+    "good-console": "^5.3.1",
+    "h2o2": "4.0.1",
+    "handlebars": "1.3.x",
+    "hapi": "13.0.x",
+    "hapi-auth-basic": "^4.1.0",
+    "hapi-swagger": "glennjones/hapi-swagger",
+    "hoek": "2.7.0",
+    "inert": "3.x",
+    "joi": "6.9.1",
+    "marked": "0.3.x",
+    "vision": "^4.0.1",
+    "visionary": "^4.0.0",
+    "wreck": "6.3.0"
+  },
+
+  "engines": {
+    "node": ">= 5.x"
+  }
+}

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- built with bespoke.js -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Hello World</title>
+    <link rel="stylesheet" type="text/css" href="assets/fonts/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="build/build.css">
+  </head>
+  <body>
+    <article>
+
+
+      <section>
+        <h1>Time to be HAPI</h1>
+        <img src="assets/logo-whiteout.svg"/>
+      </section>
+
+      <section>
+        <h2>Presentation and code examples</br><a href="https://github.com/glennjones/time-to-be-hapi">https://github.com/glennjones/</br>time-to-be-hapi</a></h2>
+      </section>
+
+<!--
+      <section>
+        <p class="large-text">
+            HAPI is the <strong>perfect foundation for </br>REST APIs</strong>. It has a simple to use <strong>configuration-centric
+            design</strong> with built-in support for <strong>input validation, caching & authentication</strong>
+        </p>
+      </section>
+      -->
+
+      <section style="backgroud-color: #fff">
+        <img src="assets/company-logos.png" style="width:100%; height:100%"/>
+      </section>
+
+
+      <section>
+        <p class="large-text">Hapi was able to handle all of Walmart mobile Black Friday traffic with about
+        10 CPU cores and 28Gb RAM (of course we used more but they were sitting idle at
+        0.75% load most of the time)</p>
+        <p>Eran Hammer <a href="https://github.com/hapijs/hapi/issues/1326">#1326</a><p>
+     </section>
+
+
+      <section>
+        <h2>Creating a HAPI server</h2>
+        <pre><code class="language-javascript">const Hapi = require('hapi');
+const server = new Hapi.Server();
+
+server.connection({ port: 3000 });
+server.start((err) => {
+
+    if (err) {
+        throw err;
+    }
+    console.log('Server running at:', server.info.uri);
+});
+</code></pre>
+      </section>
+
+
+      <section>
+        <h2>Adding a route</h2>
+        <pre><code class="language-javascript">server.route([{
+    method: 'GET',
+    path: '/',
+    handler: (request, reply) => {
+        reply('Hello, world!');
+    }
+}]);
+</code></pre>
+      </section>
+
+
+      <section>
+        <h2>Passing a path parameter</h2>
+        <pre><code class="language-javascript">server.route([{
+    method: 'GET',
+    path: '/{name}',
+    handler: (request, reply) => {
+        reply('Hello, ' + request.params.name + '!');
+    }
+}]);
+</code></pre>
+      </section>
+
+
+
+      <section>
+        <h2>Plugins</h2>
+        <p class="large-text"><strong>Plugins provide a way to organise your code into logical components and put them together
+            differnt combinations.</strong> The <em>&quot;right way&quot;</em> build a HAPI app is to create it with plugins.
+            </p>
+      </section>
+
+
+                  <section>
+        <h2>Registering plugins</h2>
+        <pre><code class="language-javascript">const Inert = require('inert');
+server.register(Inert, () => {});
+        </code></pre>
+      </section>
+
+
+<section>
+        <h2>Registering plugins</h2>
+
+            <pre><code class="language-javascript">const Inert = require('inert');
+const Vision = require('vision');
+const SiteSettings = require('../plugins/site-settings');
+server.register([
+    Inert,
+    Vision,
+    SiteSettings] (err) => {
+        server.route(Routes);
+        server.start(() => {
+             console.log('Server running at:', server.info.uri);
+        });
+});
+</code></pre>
+      </section>
+
+
+            <section>
+        <h2><span class="plugin-name">Inert</span>: Static files and directories</h2>
+            <pre><code class="language-javascript">server.register([Inert], () => {});
+server.route([{
+    method: 'GET',
+    path: '/{path*}',
+    handler: {
+        directory: {
+            path: './public'
+        }
+    }
+}]);
+</code></pre>
+      </section>
+
+
+                  <section>
+        <h2><span class="plugin-name">Vision</span>: Templates</h2>
+            <pre><code class="language-javascript">server.register([Vision], () => {});
+server.views({
+    relativeTo: __dirname,
+    path: 'templates',
+    engines: { html: require('handlebars') },
+});
+
+server.route([{
+    method: 'GET',
+    path: '/',
+    handler: (request, reply) => {
+        reply.view('index.html', {'date': new Date()});
+    }
+}]);
+</code></pre>
+      </section>
+
+
+    <section>
+        <h2>Routes &dash; rich set of features</h2>
+            <pre><code class="language-javascript">{
+    method: 'POST',
+    path: '/user',
+    config: {
+        handler: userAddUpdate,
+        
+        description: 'Add a new user',
+        tags: ['api', 'user'],
+        auth: 'bearertoken'
+        cors: true,
+        jsonp: 'callback'
+    }
+}
+</code></pre>
+      </section>
+
+
+
+     <section>
+        <h2><span class="plugin-name">Glue</span>: Everything as configuration</h2>
+            <pre><code class="language-javascript">var manifest = {
+    server: {},
+    connections: [
+        {
+            host: 'localhost',
+            port: 3000,
+            labels: ['web']
+        }
+    ],
+    registrations: [
+        {plugin: 'inert'},
+        ...</code></pre>
+      </section>
+
+
+
+   <section>
+        <h2>Handlers &dash; interface to your business logic</h2>
+            <pre><code class="language-javascript">handler: (request, reply) => {
+    Users.getById(request.params.id, (err, json) => {
+
+        if (err !== null) {
+            reply(Boom.notFound('invalid request: ' + err));
+        } else {
+            reply(json).type('application/json').code(200)
+        }
+    });
+}
+</code></pre>
+      </section>
+
+
+      <section>
+        <h2><span class="plugin-name">Blipp</span>: Displays the routes table at startup</h2>
+        <img src="assets/blipp.png" style="width:80%; height:80%"/>
+      </section>
+
+
+   <section>
+        <h2><span class="plugin-name">Joi</span> validating input</h2>
+            <pre><code class="language-javascript">server.route({
+    method : 'GET',
+    path : '/user/{id}',
+    config : {
+    	handler: handler,
+    	validate: {
+    	    param: {
+    	        id: Joi.number().min(0).required()
+    	    }
+    	}
+    }
+});</code></pre>
+      </section>
+
+   <section>
+        <h2><span class="plugin-name">Joi</span> comperhensive descriptions</h2>
+        <ul>
+      <li><strong>Validates</strong> - payload, query, params, headers and auth</li>
+      <li><strong>Types</strong> - object, array, string, number, boolean, date, binary and alternatives</li>
+      <li><strong>Sets of test for each type</strong> -  require(), alphanum(), guid(), min(), max(), email() and unique() etc.</li>
+      <li><strong>Regex tests</strong> - . regex(/[a-zA-Z0-9]{3,30}/)</li>
+       <li><strong>Metadate</strong> - label, description and tags</li>
+       </ul>
+    </section>
+
+   <section>
+        <h2><span class="plugin-name">Joi</span> schema for your data</h2>
+            <pre><code class="language-javascript">
+const sumSchema = Joi.object({
+    id: Joi.string().required().example('x78P9c'),
+    a: Joi.number().required().example(5),
+    b: Joi.number().required().example(5),
+    operator: Joi.string().required().valid(['+','-','/','*']).example('+'),
+    equals: Joi.number().required().example(10),
+    created: Joi.string().required().isoDate().description('ISO date').example('2015-12-01'),
+    modified: Joi.string().isoDate().description('ISO date').example('2015-12-01')
+}).label('Sum');</code></pre>
+      </section>
+
+   <section>
+        <h2><span class="plugin-name">Joi</span> validate all your objects</h2>
+            <pre><code class="language-javascript">const init = function (options, next) {
+
+    let settings = Hoek.applyToDefaults(defaults, options);
+    Joi.assert(settings, settingsSchema);
+    ...
+</code></pre>
+      </section>
+
+      <section>
+        <h2>Request lifecycle</h2>
+        <dl>
+            <dt>onRequest</dt>
+            <dd>Process query extensions, Parse cookies</dd>
+
+            <dt>onPreAuth</dt>
+            <dd>Authenticate request, Read and parse payload Authenticate payload</dd>
+
+            <dt>onPostAuth</dt>
+            <dd>Validate path parameters,Validate query,Validate payload</dd>
+
+            <dt>onPreHandler</dt>
+            <dd>Route prerequisites, Route handler</dd>
+
+            <dt>onPostHandler</dt>
+            <dd>Validate response payload</dd>
+
+            <dt>onPreResponse</dt>
+            <dd>Send response</dd>
+        </dl>
+    </section>
+
+
+   <section>
+        <h2>onPostHandler</h2>
+            <pre><code class="language-javascript">server.ext('onPostHandler', (request, reply) => {
+
+    let response = request.response;
+    if (response.variety === 'view') {
+        if (!response.source.context) {
+            response.source.context = {};
+        }
+        response.source.context.query = request.query;
+    }
+    return reply.continue();
+});</code></pre>
+    </section>
+
+
+   <section>
+        <h2>server.method</h2>
+            <pre><code class="language-javascript">const add = function (x, y, next) {
+    next(null, x + y);
+};
+server.method('add', add, {});
+</code></pre>
+
+<p>The thrid parameter is options, mostly used for caching code patterns</p>
+
+    </section>
+
+
+       <section>
+        <h2>server.decorate</h2>
+            <pre><code class="language-javascript">const success = function () {
+    return this.response({ status: 'ok' });
+};
+server.decorate('reply', 'success', success);</code></pre>
+    </section>
+
+
+       <section>
+        <h2>server.bind</h2>
+            <pre><code class="language-javascript">server.bind({
+    service: new Service({
+        url: 'http://example.com/api',
+        accesstoken: 'gh45-is76-nb10-fy49',
+    })
+});</code></pre>
+
+    </section>
+
+
+      <section>
+        <h2>Caching client-side</h2>
+                  <pre><code class="language-javascript">path: '/client/',
+method: 'GET',
+handler: function (request, reply) {
+    reply({ 'time-to-be': 'hapi' });
+},
+config: {
+    cache: {
+        expiresIn: 30 * 1000,
+        privacy: 'private'
+    }
+}</code></pre>
+<pre><code>.etag('xxxxxxxxx') | .header('Last-Modified', date.toUTCString());</code></pre>
+</section>
+
+
+<!--
+<section>
+        <h2>Caching 'Last-Modified' & etag</h2>
+                  <pre><code class="language-javascript">reply(result).etag('xxxxxxxxx');
+reply(result).header('Last-Modified', lastModified.toUTCString());
+</code></pre>
+</section>
+-->
+
+
+      <section>
+        <h2><span class="plugin-name">Catbox</span>: Caching server-side</h2>
+        <ul>
+            <li>In built in by default</li>
+            <li>Catbox: Redis, MongoDB, Memcached, Riak, Amazon S3, RethinkDB, Couchbase, Aerospike and LevelDB</li>
+            <li>expiresIn: 20 * 60 * 1000</li>
+            <li>expiresAt: 14:56</li>
+            <li>staleIn - auto refresh of a cached value</li>
+            <li>Request timeouts that fallback to cache</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Authentication</h2>
+            <pre><code class="language-javascript">const Basic = require('hapi-auth-basic');
+
+server.register(Basic, (err) => {
+    server.auth.strategy('simple', 'basic', { validateFunc: validate });
+    server.route({
+        method: 'GET',
+        path: '/',
+        config: {
+            auth: 'simple',
+            handler: function (request, reply) {
+                reply('hello, ' + request.auth.credentials.name);
+            }
+        }
+    });
+});
+</code></pre>
+      </section>
+
+
+      <section>
+        <h2><span class="plugin-name">Bell</span>: Authentication</h2>
+        <p>Third-party authentication plugin for Facebook, GitHub, Google, Instagram, LinkedIn,
+            Twitter, Yahoo, Foursquare, VK, ArcGIS Online, Windows Live, Nest, Phabricator,
+            BitBucket, Dropbox, Reddit, Tumblr and Twitch</p>
+            <pre><code class="language-javascript"> server.auth.strategy('twitter', 'bell', {
+    provider: 'twitter',
+    password: 'cookie_encryption_password_secure',
+    clientId: 'my_twitter_client_id',
+    clientSecret: 'my_twitter_client_secret',
+    isSecure: false   // Terrible idea but required for developing locally
+});
+</code></pre>
+      </section>
+
+
+      <section>
+        <h2><span class="plugin-name">h2o2</span>: Proxy other APIs</h2>
+   <pre><code class="language-javascript">path: '/rest/v1/alpha/{code}',
+    config: {
+        validate: {
+            params: {
+                code: Joi.string().length(2).required()
+            }
+        },
+        handler: {
+            proxy: {
+                host: 'restcountries.eu',
+                protocol: 'https',
+                passThrough: true,
+                xforward: true,
+                onResponse: replyWithJSON
+            </code></pre>
+      </section>
+
+
+
+      <section>
+        <h2><span class="plugin-name">Good</span>: Process monitoring/logging</h2>
+        <ul>
+          <li><strong>Ops</strong> - Process performance - CPU, memory, disk, and others.</li>
+          <li><strong>Request</strong> - Request logging information</li>
+          <li><strong>Response</strong> - Information about incoming requests and the response</li>
+          <li><strong>Error</strong> - request responses that have a status code of 500</li>
+        </ul>
+        <p>Reporters for console, file, HTTP, UDP, winston or logstash</p>
+
+      </section>
+
+      <section>
+        <h2><span class="plugin-name">Lab</span> & <span class="plugin-name">Code</span>: Testing</h2>
+        <ul>
+          <li>Lab works with any assertion library that throws an error</li>
+          <li>eslint to HAPI styleguides</li>
+          <li>Coverage reports</li>
+          <li>Global variable leaks detected</li>
+          <li>Works with CI like travis</li>
+        </ul>
+      </section>
+
+
+      <section>
+        <h2><span class="plugin-name">Lab</span>: Coverage report</h2>
+        <img src="assets/coverage.png" style="width:100%; height:100%"/>
+      </section>
+
+      <section>
+        <h2>Testing - server.inject</h2>
+        <pre><code class="language-javascript">server.inject({ method: 'GET', url: '/swagger.json' }, function (response) {
+    expect(response.statusCode).to.equal(200);
+    expect(response.result.paths['/test'].post.summary).to.equal('Add sum');
+    done();
+});
+      </code></pre>
+      </section>
+
+      <section>
+        <h2><span class="plugin-name">hapi-swagger</span>: Documentation</h2>
+        <img src="assets/swagger1.png" style="height:95%;" />
+      </section>
+
+      <section>
+        <h2><span class="plugin-name">hapi-swagger</span>: Documentation</h2>
+        <img src="assets/swagger2.png" style="height:95%;" />
+      </section>
+
+    <section>
+      <h2><span class="plugin-name">hapi-waypointer</span>: Not production</h2>
+      <ul>
+        <li>Documents Restful APIs </li>
+        <li>Builds on top of swagger.json format</li>
+        <li>Provides code examples/snippets</li>
+        <li>Builds example JSON output for each endpoint</li>
+        <li>Allow authors to inject text in githubs markdown format</li>
+        <li>Themes built with handlebars</li>
+        <li>Can be single page or multi page depending on the theme design</li>
+        <li>Any frontend dev should be able to modify or create a theme</li>
+      </ul>
+    </section>
+
+
+
+      <section>
+        <h2><span class="plugin-name">hapi-waypointer</span>: Hub theme</h2>
+        <img src="assets/waypointer1.png" style="height:95%;" />
+      </section>
+
+      <section>
+        <h2><span class="plugin-name">hapi-waypointer</span>: Form theme</h2>
+        <img src="assets/waypointer2.png" style="height:95%;" />
+      </section>
+
+      <section>
+        <h2><span class="plugin-name">hapi-waypointer</span>: Plain theme</h2>
+        <img src="assets/waypointer3.png" style="height:95%;" />
+      </section>
+
+
+         <section>
+        <h2>Presented to London.js on the 15 March 2016 in Brighton. The content and code are open sourced under MIT licence.</br>Glenn Jones.</h2>
+        </section>
+
+
+    </article>
+    <script src="build/build.js"></script>
+  </body>
+</html>

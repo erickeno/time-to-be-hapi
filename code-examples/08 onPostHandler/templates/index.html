@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>{{title}}</title>
+    </head>
+    <body>
+        <h1>{{uppercase title}}</h1>
+        {{#if query}}
+            The passed querystring
+                {{#each query}}
+                    <strong>{{this}}<strong>
+                {{/each}}
+        {{/if}}
+        {{> footer}}
+    </body>
+</html>

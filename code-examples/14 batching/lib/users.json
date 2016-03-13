@@ -1,0 +1,27 @@
+{
+    "items": [{
+        "type": ["h-card"],
+        "properties": {
+            "id": "glennjones",
+            "name": ["Glenn Jones"]
+        }
+    },{
+        "type": ["h-card"],
+        "properties": {
+            "id": "johnblack",
+            "name": ["John Black"]
+        }
+    },{
+        "type": ["h-card"],
+        "properties": {
+            "id": "janesmith",
+            "name": ["Jane Smith"]
+        }
+    },{
+        "type": ["h-card"],
+        "properties": {
+            "id": "jopeters",
+            "name": ["Jo Peters"]
+        }
+    }]
+}

@@ -1,7 +1,7 @@
 {
   "name": "time-to-be-hapi",
   "author": "Glenn Jones",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Time to be HAPI - london.js talk",
   "keywords": [
     "london.js",
@@ -20,6 +20,7 @@
     "start": "app"
   },
   "dependencies": {
+    "bassmaster": "^1.9.0",
     "bcrypt-nodejs": "0.0.3",
     "blipp": "2.1.x",
     "boom": "2.8.x",
@@ -35,12 +36,16 @@
     "hoek": "2.7.0",
     "inert": "3.x",
     "joi": "6.9.1",
+    "js2xmlparser": "^1.0.0",
     "marked": "0.3.x",
     "vision": "^4.0.1",
     "visionary": "^4.0.0",
-    "wreck": "6.3.0"
+    "wreck": "6.3.0",
+    "hapi-waypointer": "glennjones/hapi-waypointer",
+    "waypointer-hub": "glennjones/waypointer-hub",
+    "waypointer-plain": "glennjones/waypointer-plain",
+    "waypointer-form": "glennjones/waypointer-form"
   },
-
   "engines": {
     "node": ">= 5.x"
   }

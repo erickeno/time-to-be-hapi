@@ -1,0 +1,404 @@
+{
+    "items": [{
+        "type": ["h-card", "h-as-place"],
+        "properties": {
+            "id": "the-cleveland",
+            "author": "glennjones",
+            "name": ["The Cleveland"],
+            "street-address": ["27 Cleveland Road"],
+            "locality": ["Brighton"],
+            "region": ["East Sussex"],
+            "postal-code": ["BN1 6FF"],
+            "country-name": ["United Kingdom"],
+            "longitude": ["-0.138477087"],
+            "latitude": ["50.8422956834"],
+            "x-geofence": ["18"],
+            "x-access": ["public"],
+            "x-foursquare": ["https://foursquare.com/v/cleveland/4b8424caf964a520802331e3"],
+            "x-equivalent": ["https://foursquare.com/v/cleveland/4b8424caf964a520802331e3", "https://www.openstreetmap.org/node/340254859"],
+            "x-osm": ["https://www.openstreetmap.org/node/340254859"],
+            "updated": ["2015-03-13T13:46:28.202Z"],
+            "category": ["pub"]
+        }
+    }, {
+        "type": ["h-card", "h-as-place"],
+        "properties": {
+            "id": "the-open-house",
+            "name": ["The Open House"],
+            "author": "glennjones",
+            "street-address": ["146 Springfield Road"],
+            "locality": ["Brighton"],
+            "region": ["East Sussex"],
+            "postal-code": ["BN1 6BZ"],
+            "country-name": ["United Kingdom"],
+            "longitude": ["-0.13628304"],
+            "latitude": ["50.8372193889"],
+            "x-geofence": ["14"],
+            "x-access": ["public"],
+            "x-foursquare": ["https://foursquare.com/v/the-open-house/4af5b2caf964a5207efb21e3"],
+            "x-equivalent": ["https://foursquare.com/v/the-open-house/4af5b2caf964a5207efb21e3", "https://www.openstreetmap.org/node/340412261"],
+            "x-osm": ["https://www.openstreetmap.org/node/340412261"],
+            "updated": ["2015-03-13T15:30:10.872Z"],
+            "category": ["pub"]
+        }
+    }, {
+        "type": ["h-card", "h-as-place"],
+        "properties": {
+            "id": "preston-park-tavern",
+            "name": ["Preston Park Tavern"],
+            "street-address": ["88 Havelock Road"],
+            "locality": ["Brighton"],
+            "region": ["East Sussex"],
+            "postal-code": ["BN1 6GF"],
+            "country-name": ["United Kingdom"],
+            "longitude": ["-0.1411485672"],
+            "latitude": ["50.8417706335"],
+            "x-geofence": ["18"],
+            "x-access": ["public"],
+            "x-foursquare": ["https://foursquare.com/v/preston-park-tavern/4b5f912df964a52008c229e3"],
+            "x-equivalent": ["https://foursquare.com/v/preston-park-tavern/4b5f912df964a52008c229e3", "https://openstreetmap.org/node/340255756"],
+            "x-osm": ["https://openstreetmap.org/node/340255756"],
+            "updated": ["2015-03-13T15:36:04.885Z"],
+            "category": ["pub"]
+        }
+    }, {
+        "type": ["h-card", "h-as-place"],
+        "properties": {
+            "id": "the-signalman",
+            "name": ["The Signalman"],
+            "street-address": ["76-78 Ditchling Rise"],
+            "locality": ["Brighton"],
+            "region": ["East Sussex"],
+            "postal-code": ["BN1 4QQ"],
+            "country-name": ["United Kingdom"],
+            "longitude": ["-0.1362615824"],
+            "latitude": ["50.8359472646"],
+            "x-geofence": ["22"],
+            "x-access": ["public"],
+            "x-foursquare": ["https://foursquare.com/v/the-signalman/4b0696caf964a52078ed22e3"],
+            "x-equivalent": ["https://foursquare.com/v/the-signalman/4b0696caf964a52078ed22e3", "https://openstreetmap.org/node/523891964"],
+            "x-osm": ["https://openstreetmap.org/node/523891964"],
+            "updated": ["2015-03-13T16:54:29.108Z"],
+            "category": ["pub"]
+        }
+    }, {
+        "type": ["h-card", "h-as-place"],
+        "properties": {
+            "id": "the-worlds-end",
+            "name": ["The Worlds End"],
+            "street-address": ["60-61 London Rd"],
+            "locality": ["Brighton"],
+            "region": ["East Sussex"],
+            "postal-code": ["BN1 4JE"],
+            "country-name": ["United Kingdom"],
+            "longitude": ["-0.1384016"],
+            "latitude": ["50.8328325"],
+            "x-geofence": ["26"],
+            "x-access": ["public"],
+            "x-foursquare": ["https://foursquare.com/v/the-worlds-end/4c70059cd7fab1f71a115dc9"],
+            "x-equivalent": ["https://foursquare.com/v/the-worlds-end/4c70059cd7fab1f71a115dc9", "https://openstreetmap.org/node/1134849762"],
+            "x-osm": ["https://openstreetmap.org/node/1134849762"],
+            "updated": ["2015-03-13T17:10:02.150Z"],
+            "category": ["pub"]
+        }
+    }, {
+        "type": ["h-card", "h-as-place"],
+        "properties": {
+            "id": "the-great-eastern",
+            "name": ["The Great Eastern"],
+            "street-address": ["103 Trafalgar Street"],
+            "locality": ["Brighton"],
+            "region": ["East Sussex"],
+            "postal-code": ["BN1 4ER"],
+            "country-name": ["United Kingdom"],
+            "longitude": ["-0.1359987259"],
+            "latitude": ["50.8280393282"],
+            "x-geofence": ["10"],
+            "x-access": ["public"],
+            "x-foursquare": ["https://foursquare.com/v/the-great-eastern/4b058846f964a5208fbb22e3"],
+            "x-equivalent": ["https://foursquare.com/v/the-great-eastern/4b058846f964a5208fbb22e3", "https://openstreetmap.org/node/306593875"],
+            "x-osm": ["https://openstreetmap.org/node/306593875"],
+            "updated": ["2015-03-13T14:20:54.608Z"],
+            "category": ["pub"]
+        }
+    }, {
+        "type": ["h-card", "h-as-place"],
+        "properties": {
+            "id": "wagon-and-horses",
+            "name": ["Wagon and Horses"],
+            "street-address": ["109 Church Street"],
+            "locality": ["Brighton"],
+            "region": ["East Sussex"],
+            "postal-code": ["BN1 1UD"],
+            "country-name": ["United Kingdom"],
+            "longitude": ["-0.1389424503"],
+            "latitude": ["50.8241695755"],
+            "x-geofence": ["9"],
+            "x-access": ["public"],
+            "x-foursquare": ["https://foursquare.com/v/waggon-and-horses/4b058845f964a5206dbb22e3"],
+            "x-equivalent": ["https://foursquare.com/v/waggon-and-horses/4b058845f964a5206dbb22e3", "https://openstreetmap.org/way/142032996"],
+            "x-osm": ["https://openstreetmap.org/way/142032996"],
+            "updated": ["2015-03-13T17:08:55.880Z"],
+            "category": ["pub"]
+        }
+    }, {
+        "type": ["h-card", "h-as-place"],
+        "properties": {
+            "id": "the-hop-poles",
+            "name": ["The Hop Poles"],
+            "street-address": ["13 Middle St"],
+            "locality": ["Brighton"],
+            "region": ["East Sussex"],
+            "postal-code": ["BN1 1AL"],
+            "country-name": ["United Kingdom"],
+            "longitude": ["-0.1433427"],
+            "latitude": ["50.8214442"],
+            "x-geofence": ["10"],
+            "x-access": ["public"],
+            "x-foursquare": ["https://foursquare.com/v/the-hop-poles/4e7f3aacb63474966618a431"],
+            "x-equivalent": ["https://foursquare.com/v/the-hop-poles/4e7f3aacb63474966618a431", "https://openstreetmap.org/node/1134763606"],
+            "x-osm": ["https://openstreetmap.org/node/1134763606"],
+            "updated": ["2015-03-13T16:50:58.325Z"],
+            "category": ["pub"]
+        }
+    }, {
+        "type": ["h-card", "h-as-place"],
+        "properties": {
+            "id": "the-hobgoblin",
+            "name": ["The Hobgoblin"],
+            "street-address": ["31 York Place"],
+            "locality": ["Brighton"],
+            "region": ["East Sussex"],
+            "postal-code": ["BN1 4GU"],
+            "country-name": ["United Kingdom"],
+            "longitude": ["-0.1360523701"],
+            "latitude": ["50.8292184885"],
+            "x-geofence": ["25"],
+            "x-access": ["public"],
+            "x-foursquare": ["https://foursquare.com/v/hobgoblin/4b058846f964a5208ebb22e3"],
+            "x-equivalent": ["https://foursquare.com/v/hobgoblin/4b058846f964a5208ebb22e3", "https://openstreetmap.org/node/1134855377"],
+            "x-osm": ["https://openstreetmap.org/node/1134855377"],
+            "updated": ["2015-03-13T14:41:35.361Z"],
+            "category": ["pub"]
+        }
+    }, {
+        "type": ["h-card", "h-as-place"],
+        "properties": {
+            "id": "anchor-inn",
+            "name": ["Anchor Inn"],
+            "street-address": ["Anchor Lane"],
+            "locality": ["Barcombe"],
+            "region": ["East Sussex"],
+            "postal-code": ["BN8 5EA"],
+            "country-name": ["United Kingdom"],
+            "longitude": ["0.0507956743"],
+            "latitude": ["50.9253619631"],
+            "x-geofence": ["30"],
+            "x-access": ["public"],
+            "x-foursquare": ["https://foursquare.com/v/the-anchor-inn/4b63f6b0f964a520fa982ae3"],
+            "x-equivalent": ["https://foursquare.com/v/the-anchor-inn/4b63f6b0f964a520fa982ae3", "https://openstreetmap.org/node/558889128"],
+            "x-osm": ["https://openstreetmap.org/node/558889128"],
+            "updated": ["2015-03-13T13:32:59.661Z"],
+            "category": ["pub", "boating"]
+        }
+    }, {
+        "type": ["h-card", "h-as-place"],
+        "properties": {
+            "id": "the-hop-poles-1",
+            "name": ["The Hop Poles"],
+            "street-address": ["17-19 Kings Street"],
+            "locality": ["London"],
+            "postal-code": ["W6 9HR"],
+            "country-name": ["United Kingdom"],
+            "longitude": ["-0.2257967018"],
+            "latitude": ["51.4926866303"],
+            "x-geofence": ["16"],
+            "x-access": ["public"],
+            "x-foursquare": ["https://foursquare.com/v/the-hop-poles/4b87cf79f964a52014cd31e3"],
+            "x-equivalent": ["https://foursquare.com/v/the-hop-poles/4b87cf79f964a52014cd31e3", "https://openstreetmap.org/node/1522909770"],
+            "x-osm": ["https://openstreetmap.org/node/1522909770"],
+            "updated": ["2015-03-13T16:53:03.508Z"],
+            "category": ["pub"]
+        }
+    }, {
+        "type": ["h-card", "h-as-place"],
+        "properties": {
+            "id": "the-palmeira",
+            "name": ["The Palmeira"],
+            "street-address": ["70-71 Cromwell Road"],
+            "locality": ["Hove"],
+            "region": ["East Sussex"],
+            "postal-code": ["BN3 3ES"],
+            "country-name": ["United Kingdom"],
+            "longitude": ["-0.1600095"],
+            "latitude": ["50.832175"],
+            "x-geofence": ["10"],
+            "x-access": ["public"],
+            "x-foursquare": ["https://foursquare.com/v/the-palmeira/4bdeef15e75c0f47a650c903"],
+            "x-equivalent": ["https://foursquare.com/v/the-palmeira/4bdeef15e75c0f47a650c903", "https://openstreetmap.org/way/242079696"],
+            "x-osm": ["https://openstreetmap.org/way/242079696"],
+            "updated": ["2015-03-13T15:32:18.000Z"],
+            "category": ["pub"]
+        }
+    }, {
+        "type": ["h-card", "h-as-place"],
+        "properties": {
+            "id": "the-eagle",
+            "name": ["The Eagle"],
+            "street-address": ["125 Gloucester Road"],
+            "locality": ["Brighton"],
+            "region": ["East Sussex"],
+            "postal-code": ["United Kingdom"],
+            "country-name": ["BN1 4AF"],
+            "longitude": ["-0.1369911432"],
+            "latitude": ["50.8267788135"],
+            "x-geofence": ["12"],
+            "x-access": ["public"],
+            "x-foursquare": ["https://foursquare.com/v/the-eagle/4b06c02ff964a520a1ef22e3"],
+            "x-equivalent": ["https://foursquare.com/v/the-eagle/4b06c02ff964a520a1ef22e3", "https://openstreetmap.org/way/138654707"],
+            "x-osm": ["https://openstreetmap.org/way/138654707"],
+            "updated": ["2015-03-13T14:02:25.445Z"],
+            "category": ["pub"]
+        }
+    }, {
+        "type": ["h-card", "h-as-place"],
+        "properties": {
+            "id": "the-victory",
+            "name": ["The Victory"],
+            "street-address": ["6 Duke Street"],
+            "locality": ["Brighton"],
+            "region": ["East Sussex"],
+            "postal-code": ["BN1 1AH"],
+            "country-name": ["United Kingdom"],
+            "longitude": ["-0.142449291"],
+            "latitude": ["50.82265651"],
+            "x-geofence": ["10"],
+            "x-access": ["public"],
+            "x-foursquare": ["https://foursquare.com/v/the-victory/4b058845f964a52067bb22e3"],
+            "x-equivalent": ["https://foursquare.com/v/the-victory/4b058845f964a52067bb22e3", "https://openstreetmap.org/way/138258930"],
+            "x-osm": ["https://openstreetmap.org/way/138258930"],
+            "updated": ["2015-03-13T17:06:07.465Z"],
+            "category": ["pub"]
+        }
+    }, {
+        "type": ["h-card", "h-as-place"],
+        "properties": {
+            "id": "the-hare-and-hounds",
+            "name": ["The Hare and Hounds"],
+            "street-address": ["75 London Road"],
+            "locality": ["Brighton"],
+            "region": ["East Sussex"],
+            "postal-code": ["BN1 4JF"],
+            "country-name": ["United Kingdom"],
+            "longitude": ["-0.1385463846"],
+            "latitude": ["50.8334864949"],
+            "x-geofence": ["7.34"],
+            "x-access": ["public"],
+            "x-foursquare": ["https://foursquare.com/v/the-hare--hounds/4b61ec50f964a520882b2ae3"],
+            "x-equivalent": ["https://foursquare.com/v/the-hare--hounds/4b61ec50f964a520882b2ae3", "https://openstreetmap.org/way/106500934"],
+            "x-osm": ["https://openstreetmap.org/way/106500934"],
+            "updated": ["2015-03-13T16:49:52.328Z"],
+            "category": ["pub", "mexican"]
+        }
+    }, {
+        "type": ["h-card", "h-as-place"],
+        "properties": {
+            "id": "the-cricketers",
+            "name": ["The Cricketers"],
+            "street-address": ["14 Black Lion Steet"],
+            "locality": ["Brighton"],
+            "region": ["East Sussex"],
+            "postal-code": ["BN1 1ND"],
+            "country-name": ["United Kingdom"],
+            "longitude": ["-0.1409007606"],
+            "latitude": ["50.8214892484"],
+            "x-geofence": ["12.63"],
+            "x-access": ["public"],
+            "x-foursquare": ["https://foursquare.com/v/the-cricketers/4b058845f964a52028bb22e3"],
+            "x-equivalent": ["https://foursquare.com/v/the-cricketers/4b058845f964a52028bb22e3", "https://www.openstreetmap.org/node/1134758744"],
+            "x-osm": ["https://www.openstreetmap.org/node/1134758744"],
+            "updated": ["2015-03-13T16:32:54.049Z"],
+            "category": ["pub"]
+        }
+    }, {
+        "type": ["h-card", "h-as-place"],
+        "properties": {
+            "id": "the-basketmakers-arms",
+            "name": ["The Basketmakers Arms"],
+            "street-address": ["12 Gloucester Road"],
+            "locality": ["Brighton"],
+            "region": ["East Sussex"],
+            "postal-code": ["BN1 4AD"],
+            "country-name": ["United Kingdom"],
+            "longitude": ["-0.1368865371"],
+            "latitude": ["50.8265856671"],
+            "x-geofence": ["9.08"],
+            "x-access": ["public"],
+            "x-foursquare": ["https://foursquare.com/v/4b05c12bf964a52082e222e3"],
+            "x-equivalent": ["https://foursquare.com/v/4b05c12bf964a52082e222e3", "https://www.openstreetmap.org/way/137403158#map=19/50.82669/-0.13676"],
+            "x-osm": ["https://www.openstreetmap.org/way/137403158#map=19/50.82669/-0.13676"],
+            "updated": ["2015-04-01T16:45:50.913Z"],
+            "category": ["pub"]
+        }
+    }, {
+        "type": ["h-card", "h-as-place"],
+        "properties": {
+            "id": "the-fountain-head",
+            "name": ["The Fountain Head"],
+            "street-address": ["102 North Road"],
+            "locality": ["Brighton"],
+            "region": ["East Sussex"],
+            "country-name": ["United Kingdom"],
+            "longitude": ["-0.1373237371"],
+            "latitude": ["50.825508099"],
+            "x-geofence": ["10"],
+            "x-access": ["public"],
+            "x-foursquare": ["https://foursquare.com/v/the-fountain-head/4b05c7a5f964a52015e322e3"],
+            "x-equivalent": ["https://foursquare.com/v/the-fountain-head/4b05c7a5f964a52015e322e3", "https://openstreetmap.org/way/137403356"],
+            "x-osm": ["https://openstreetmap.org/way/137403356"],
+            "updated": ["2015-03-13T17:37:21.548Z"],
+            "category": ["pub"]
+        }
+    }, {
+        "type": ["h-card", "h-as-place"],
+        "properties": {
+            "id": "brighton-beer-dispensary",
+            "name": ["Brighton Beer Dispensary"],
+            "street-address": ["38 Dean Street"],
+            "locality": ["Brighton"],
+            "region": ["East Sussex"],
+            "postal-code": ["BN1 3EG"],
+            "country-name": ["United Kingdom"],
+            "longitude": ["-0.1490163"],
+            "latitude": ["50.8247006"],
+            "x-geofence": ["10"],
+            "x-access": ["public"],
+            "x-foursquare": ["https://foursquare.com/v/5346f350498e70ca48e32c40"],
+            "x-equivalent": ["https://foursquare.com/v/5346f350498e70ca48e32c40", "https://www.openstreetmap.org/node/2446836567"],
+            "x-osm": ["https://www.openstreetmap.org/node/2446836567"],
+            "updated": ["2015-04-02T09:50:30.191Z"],
+            "category": ["pub"]
+        }
+    }, {
+        "type": ["h-card", "h-as-place"],
+        "properties": {
+            "id": "hope-and-ruin",
+            "name": ["Hope and Ruin"],
+            "street-address": ["11-12 Queen's Road"],
+            "locality": ["Brighton"],
+            "region": ["East Sussex"],
+            "postal-code": ["BN1 3WA"],
+            "country-name": ["United Kingdom"],
+            "tel": ["+44 1273 325793"],
+            "longitude": ["-0.1428893209"],
+            "latitude": ["50.8253098644"],
+            "x-geofence": ["10"],
+            "x-access": ["public"],
+            "x-foursquare": ["https://foursquare.com/v/the-hope/4b058846f964a520adbb22e3"],
+            "x-equivalent": ["https://foursquare.com/v/the-hope/4b058846f964a520adbb22e3", "https://www.openstreetmap.org/way/166601667#map=19/50.82481/-0.14312"],
+            "x-osm": ["https://www.openstreetmap.org/way/166601667#map=19/50.82481/-0.14312"],
+            "updated": ["2015-05-03T11:57:48.237Z"],
+            "category": ["pub", "tge2015"]
+        }
+    }]
+}

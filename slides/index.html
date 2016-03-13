@@ -13,15 +13,17 @@
 
 
       <section>
-        <h1>Time to be HAPI</h1>
+        <h1>Time to be Hapi</h1>
         <img src="assets/logo-whiteout.svg"/>
       </section>
+
 
       <section>
         <h2>Presentation and code examples</br><a href="https://github.com/glennjones/time-to-be-hapi">https://github.com/glennjones/</br>time-to-be-hapi</a></h2>
       </section>
 
-<!--
+
+      <!--
       <section>
         <p class="large-text">
             HAPI is the <strong>perfect foundation for </br>REST APIs</strong>. It has a simple to use <strong>configuration-centric
@@ -30,12 +32,14 @@
       </section>
       -->
 
+
       <section style="backgroud-color: #fff">
         <img src="assets/company-logos.png" style="width:100%; height:100%"/>
       </section>
 
 
       <section>
+        <h2>&quot;Battle harden&quot;</h2>
         <p class="large-text">Hapi was able to handle all of Walmart mobile Black Friday traffic with about
         10 CPU cores and 28Gb RAM (of course we used more but they were sitting idle at
         0.75% load most of the time)</p>
@@ -89,16 +93,30 @@ server.start((err) => {
 
       <section>
         <h2>Plugins</h2>
-        <p class="large-text"><strong>Plugins provide a way to organise your code into logical components and put them together
-            differnt combinations.</strong> The <em>&quot;right way&quot;</em> build a HAPI app is to create it with plugins.
+        <p class="large-text"><strong>Plugins provide a way to organise your code into logical components and put them together in
+            different combinations.</strong> The <em>&quot;right way&quot;</em> to build a Hapi app is to create it with plugins.
             </p>
       </section>
+
+
+     <section>
+        <h2>Hapi plugins are powerful</h2>
+        <ul>
+            <li>Define and add routes to the server</li>
+            <li>Modify a request during its life cycle</li>
+            <li>Load in a set order by setting peer dependencies</li>
+            <li>Have thier own memory context</li>
+            <li>They can access other plugins</li>
+            <li>Inject methods into the main app</li>
+            <li>and more ... </li>
+       </ul>
+    </section>
 
 
                   <section>
         <h2>Registering plugins</h2>
         <pre><code class="language-javascript">const Inert = require('inert');
-server.register(Inert, () => {});
+server.register([Inert], () => {});
         </code></pre>
       </section>
 
@@ -159,13 +177,13 @@ server.route([{
 
 
     <section>
-        <h2>Routes &dash; rich set of features</h2>
+        <h2>Routes &dash; a rich set of features</h2>
             <pre><code class="language-javascript">{
     method: 'POST',
     path: '/user',
     config: {
-        handler: userAddUpdate,
-        
+        handler: updateUser,
+
         description: 'Add a new user',
         tags: ['api', 'user'],
         auth: 'bearertoken'
@@ -177,6 +195,14 @@ server.route([{
       </section>
 
 
+      <section>
+        <h2><span class="plugin-name">Blipp</span>: Displays the routes table at startup</h2>
+        <img src="assets/blipp.png" style="width:80%; height:80%"/>
+      </section>
+
+      <section>
+        <h1>Configuration</br>to logic</h1>
+      </section>
 
      <section>
         <h2><span class="plugin-name">Glue</span>: Everything as configuration</h2>
@@ -193,7 +219,6 @@ server.route([{
         {plugin: 'inert'},
         ...</code></pre>
       </section>
-
 
 
    <section>
@@ -213,13 +238,25 @@ server.route([{
 
 
       <section>
-        <h2><span class="plugin-name">Blipp</span>: Displays the routes table at startup</h2>
-        <img src="assets/blipp.png" style="width:80%; height:80%"/>
+        <h1>&quot;hapi hapi joi joi&quot;</h1><h2>Object schema validation</h2></h1>
       </section>
 
 
+        <section>
+        <h2><span class="plugin-name">Joi</span>: Validating your inputs</h2>
+        <ul>
+      <li><strong>Validates</strong> - payload, query, params, headers and auth</li>
+      <li><strong>Types</strong> - object, array, string, number, boolean, date, binary and alternatives</li>
+      <li><strong>Sets of tests for each type</strong> -  require(), alphanum(), guid(), min(), max(), email() and unique() etc.</li>
+      <li><strong>Regex tests</strong> - . regex(/[a-zA-Z0-9]{3,30}/)</li>
+       <li><strong>Metadata</strong> - label, description and tags</li>
+       </ul>
+    </section>
+
+
+
    <section>
-        <h2><span class="plugin-name">Joi</span> validating input</h2>
+        <h2><span class="plugin-name">Joi</span>: Validating path parameters</h2>
             <pre><code class="language-javascript">server.route({
     method : 'GET',
     path : '/user/{id}',
@@ -234,19 +271,27 @@ server.route([{
 });</code></pre>
       </section>
 
-   <section>
-        <h2><span class="plugin-name">Joi</span> comperhensive descriptions</h2>
-        <ul>
-      <li><strong>Validates</strong> - payload, query, params, headers and auth</li>
-      <li><strong>Types</strong> - object, array, string, number, boolean, date, binary and alternatives</li>
-      <li><strong>Sets of test for each type</strong> -  require(), alphanum(), guid(), min(), max(), email() and unique() etc.</li>
-      <li><strong>Regex tests</strong> - . regex(/[a-zA-Z0-9]{3,30}/)</li>
-       <li><strong>Metadate</strong> - label, description and tags</li>
-       </ul>
-    </section>
+
+         <section>
+        <h2><span class="plugin-name">Joi</span>: Validating querystrings</h2>
+            <pre><code class="language-javascript">server.route({
+    method : 'GET',
+    path : '/users',
+    config : {
+    	handler: handler,
+    	validate: {
+    	    query: {
+                pagenum: Joi.number().min(1).default(1),
+    	        pagesize: Joi.number().min(1).max(100).default(20)
+    	    }
+    	}
+    }
+});</code></pre>
+      </section>
+
 
    <section>
-        <h2><span class="plugin-name">Joi</span> schema for your data</h2>
+        <h2><span class="plugin-name">Joi</span>: A schema for your data</h2>
             <pre><code class="language-javascript">
 const sumSchema = Joi.object({
     id: Joi.string().required().example('x78P9c'),
@@ -260,7 +305,7 @@ const sumSchema = Joi.object({
       </section>
 
    <section>
-        <h2><span class="plugin-name">Joi</span> validate all your objects</h2>
+        <h2><span class="plugin-name">Joi</span>: Common patterns of use</h2>
             <pre><code class="language-javascript">const init = function (options, next) {
 
     let settings = Hoek.applyToDefaults(defaults, options);
@@ -269,20 +314,26 @@ const sumSchema = Joi.object({
 </code></pre>
       </section>
 
+
       <section>
-        <h2>Request lifecycle</h2>
+        <h1>Request lifecycle</h1><h2>The heart of Hapi</h2></h1>
+      </section>
+
+
+      <section>
+        <h2>Request lifecycle events</h2>
         <dl>
             <dt>onRequest</dt>
             <dd>Process query extensions, Parse cookies</dd>
 
             <dt>onPreAuth</dt>
-            <dd>Authenticate request, Read and parse payload Authenticate payload</dd>
+            <dd>Authenticate request, Read and parse payload, Authenticate payload</dd>
 
             <dt>onPostAuth</dt>
-            <dd>Validate path parameters,Validate query,Validate payload</dd>
+            <dd>Validate path parameters, Validate query, Validate payload</dd>
 
             <dt>onPreHandler</dt>
-            <dd>Route prerequisites, Route handler</dd>
+            <dd>Route pre-requisites, Route handler</dd>
 
             <dt>onPostHandler</dt>
             <dd>Validate response payload</dd>
@@ -317,7 +368,7 @@ const sumSchema = Joi.object({
 server.method('add', add, {});
 </code></pre>
 
-<p>The thrid parameter is options, mostly used for caching code patterns</p>
+<p>The third parameter is options, mostly used for caching code patterns</p>
 
     </section>
 
@@ -341,6 +392,11 @@ server.decorate('reply', 'success', success);</code></pre>
 });</code></pre>
 
     </section>
+
+
+      <section>
+        <h1>Toolbox</h1><h2>Features and plugins that power a Hapi app.</h2></h1>
+      </section>
 
 
       <section>
@@ -373,7 +429,7 @@ reply(result).header('Last-Modified', lastModified.toUTCString());
       <section>
         <h2><span class="plugin-name">Catbox</span>: Caching server-side</h2>
         <ul>
-            <li>In built in by default</li>
+            <li>Built-in by default</li>
             <li>Catbox: Redis, MongoDB, Memcached, Riak, Amazon S3, RethinkDB, Couchbase, Aerospike and LevelDB</li>
             <li>expiresIn: 20 * 60 * 1000</li>
             <li>expiresAt: 14:56</li>
@@ -420,7 +476,7 @@ server.register(Basic, (err) => {
 
 
       <section>
-        <h2><span class="plugin-name">h2o2</span>: Proxy other APIs</h2>
+        <h2><span class="plugin-name">h2o2</span>: Proxy other API's</h2>
    <pre><code class="language-javascript">path: '/rest/v1/alpha/{code}',
     config: {
         validate: {
@@ -438,15 +494,26 @@ server.register(Basic, (err) => {
             </code></pre>
       </section>
 
+      <section>
+        <h2><span class="plugin-name">Bassmaster</span>: Batching</h2>
 
+        <ul>
+          <li>Batches endpoints making it easy to combine requests </li>
+          <li>Supports pipelining the result of one endpoint into others within the batch</li>
+        </ul>
+
+   <pre><code class="language-javascript">{ "requests": [
+    {"method": "get", "path": "/places/the-open-house"},
+    {"method": "get", "path": "/users/$0.author"}
+] }</code></pre>
+      </section>
 
       <section>
         <h2><span class="plugin-name">Good</span>: Process monitoring/logging</h2>
         <ul>
           <li><strong>Ops</strong> - Process performance - CPU, memory, disk, and others.</li>
           <li><strong>Request</strong> - Request logging information</li>
-          <li><strong>Response</strong> - Information about incoming requests and the response</li>
-          <li><strong>Error</strong> - request responses that have a status code of 500</li>
+          <li><strong>Error</strong> - Request responses that have a status code of 500</li>
         </ul>
         <p>Reporters for console, file, HTTP, UDP, winston or logstash</p>
 
@@ -456,9 +523,9 @@ server.register(Basic, (err) => {
         <h2><span class="plugin-name">Lab</span> & <span class="plugin-name">Code</span>: Testing</h2>
         <ul>
           <li>Lab works with any assertion library that throws an error</li>
-          <li>eslint to HAPI styleguides</li>
+          <li>eslint to Hapi styleguides</li>
           <li>Coverage reports</li>
-          <li>Global variable leaks detected</li>
+          <li>Global variable leaks detection</li>
           <li>Works with CI like travis</li>
         </ul>
       </section>
@@ -496,7 +563,7 @@ server.register(Basic, (err) => {
         <li>Builds on top of swagger.json format</li>
         <li>Provides code examples/snippets</li>
         <li>Builds example JSON output for each endpoint</li>
-        <li>Allow authors to inject text in githubs markdown format</li>
+        <li>Allows authors to inject text in githubs markdown format</li>
         <li>Themes built with handlebars</li>
         <li>Can be single page or multi page depending on the theme design</li>
         <li>Any frontend dev should be able to modify or create a theme</li>
@@ -521,8 +588,25 @@ server.register(Basic, (err) => {
       </section>
 
 
+      <section>
+      <h2>Resources:</h2>
+      <ul>
+        <li>Full Documentation - http://hapijs.com/api</li>
+        <li>Tutorials - http://hapijs.com/tutorials</li>
+        <li>Plugins - http://hapijs.com/plugins</li>
+        <li>Slides - https://github.com/glennjones/time-to-be-hapi</li>
+        <li>Example apps - https://github.com/glennjones/time-to-be-hapi</li>
+      </ul>
+    </section>
+
+
+     <section>
+      <h1>Q&A</h1>
+    </section>
+
+
          <section>
-        <h2>Presented to London.js on the 15 March 2016 in Brighton. The content and code are open sourced under MIT licence.</br>Glenn Jones.</h2>
+        <h2>Presented to London.js on the 15 March 2016 in London. The content and code are open sourced under MIT licence.</br>Glenn Jones.</h2>
         </section>
 
 

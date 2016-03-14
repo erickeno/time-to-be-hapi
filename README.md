@@ -1,7 +1,7 @@
-# Time to be HAPI - london.js talk
+# Time to be Hapi - london.js talk
 
 This repo contains material created for a talk
-given at [london.js](http://www.meetup.com/London-JavaScript-Community/events/228773686/) on Tuesday, March 15, 2016 called "Time to be HAPI".
+given at [london.js](http://www.meetup.com/London-JavaScript-Community/events/228773686/) on Tuesday, March 15, 2016 called "Time to be Hapi".
 
 
 ## Downloading
@@ -40,11 +40,15 @@ Move through each code example directory re-running stages 3-4
 5. pure json config
 6. handlebars for business logic
 7. display route tables
-8. onPostHandler
-9. method, bind and decorate
-10. caching
-11. authentication
-12. proxy
-13. logging
+8. validation
+9. onPostHandler
+10. method, bind and decorate
+11. caching
+12. authentication
+13. proxy
+14. logging
+15. batching
+15. docmentation
+16. waypointer
 
 

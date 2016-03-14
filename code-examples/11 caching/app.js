@@ -63,9 +63,6 @@ server.start((err) => {
 });
 
 
-
-
-
 const getCountryData = function(options, next) {
   var code = options.code || []
   var url = 'https://restcountries.eu/rest/v1/alpha?codes=' + code;

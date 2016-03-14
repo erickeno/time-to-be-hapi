@@ -17,24 +17,18 @@
         <img src="assets/logo-whiteout.svg"/>
       </section>
 
-
+<!--
       <section>
         <h2>Presentation and code examples</br><a href="https://github.com/glennjones/time-to-be-hapi">https://github.com/glennjones/</br>time-to-be-hapi</a></h2>
       </section>
+-->
 
 
-      <!--
       <section>
         <p class="large-text">
-            HAPI is the <strong>perfect foundation for </br>REST APIs</strong>. It has a simple to use <strong>configuration-centric
-            design</strong> with built-in support for <strong>input validation, caching & authentication</strong>
+            <p class="large-text">Hapi is the <strong>perfect foundation for </br>REST APIs</strong>. It has a simple to use <strong>configuration-centric
+            design</strong> with built-in support for <strong>input validation, caching & authentication</strong><p>
         </p>
-      </section>
-      -->
-
-
-      <section style="backgroud-color: #fff">
-        <img src="assets/company-logos.png" style="width:100%; height:100%"/>
       </section>
 
 
@@ -45,6 +39,14 @@
         0.75% load most of the time)</p>
         <p>Eran Hammer <a href="https://github.com/hapijs/hapi/issues/1326">#1326</a><p>
      </section>
+
+
+
+      <section style="backgroud-color: #fff">
+        <img src="assets/company-logos.png" style="width:100%; height:100%"/>
+      </section>
+
+
 
 
       <section>
@@ -259,12 +261,14 @@ server.route([{
         <h2><span class="plugin-name">Joi</span>: Validating path parameters</h2>
             <pre><code class="language-javascript">server.route({
     method : 'GET',
-    path : '/user/{id}',
+    path : '/path/{name}',
     config : {
-    	handler: handler,
+    	handler: (request, reply) => {
+            reply('Hello, ' + request.params.name + '!');
+        },
     	validate: {
-    	    param: {
-    	        id: Joi.number().min(0).required()
+    	    params: {
+    	        name: Joi.string().required()
     	    }
     	}
     }
@@ -395,7 +399,7 @@ server.decorate('reply', 'success', success);</code></pre>
 
 
       <section>
-        <h1>Toolbox</h1><h2>Features and plugins that power a Hapi app.</h2></h1>
+        <h1>Toolbox</h1><h2>Features and plugins that power production ready Hapi apps</h2></h1>
       </section>
 
 
@@ -430,6 +434,7 @@ reply(result).header('Last-Modified', lastModified.toUTCString());
         <h2><span class="plugin-name">Catbox</span>: Caching server-side</h2>
         <ul>
             <li>Built-in by default</li>
+            <li>Design around the concept of strategies</li>
             <li>Catbox: Redis, MongoDB, Memcached, Riak, Amazon S3, RethinkDB, Couchbase, Aerospike and LevelDB</li>
             <li>expiresIn: 20 * 60 * 1000</li>
             <li>expiresAt: 14:56</li>

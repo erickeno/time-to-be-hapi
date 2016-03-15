@@ -187,3 +187,7 @@ h2{
 .last-item{
     list-style-type: none;
 }
+
+.bespoke-slide{
+    padding: 0;
+}

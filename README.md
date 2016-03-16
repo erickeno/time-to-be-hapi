@@ -38,7 +38,7 @@ Move through each code example directory re-running stages 3-4
 3. registering plugins
 4. templates
 5. pure json config
-6. handlebars for business logic
+6. handlers for business logic
 7. display route tables
 8. validation
 9. onPostHandler
